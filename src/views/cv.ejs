@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV Template</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap");
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Quicksand", sans-serif;
+      font-size: 16px;
+    }
+
+    p {
+      line-height: 1.35em;
+      text-align: justify;
+      margin-bottom: 0.5em;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 0.15em;
+    }
+
+    h2 {
+      font-size: 1.35em;
+      margin-bottom: 0.5em;
+      background-color: #ff2828;
+      color: #fff;
+      width: fit-content;
+      padding: 0.1em 0.2em;
+    }
+
+    hr {
+      color: #555;
+    }
+
+    main {
+      padding: 30px;
+      margin: 30px auto;
+      max-width: 210mm;
+      box-shadow: 2px 2px 5px #555;
+      min-height: 297mm;
+    }
+
+    /********/
+    .name {
+      padding: 20px 0;
+      margin: 20px 0;
+      border-bottom: 1px solid #555;
+    }
+
+    .jobtitle {
+      background-color: unset;
+      color: #000;
+    }
+
+    /******/
+    .content {
+      display: flex;
+      gap: 1.5em;
+    }
+
+    .section {
+      margin-top: 1.5em;
+    }
+
+    .section:first-child {
+      margin-top: 0em;
+    }
+
+    /****/
+    .line {
+      border-right: solid 1px #555;
+    }
+
+    /*******/
+    .lside {
+      min-width: 20%;
+    }
+
+    /*****/
+    .contactItem {
+      margin-bottom: 1em;
+      display: flex;
+      flex-direction: row;
+      gap: 0.5em;
+    }
+
+    .contactItem svg {
+      min-width: 2em;
+      max-width: 2em;
+      filter: grayscale(1);
+      opacity: 0.75;
+    }
+
+    .contactItem p {
+      margin-bottom: 0;
+      word-break: break-word;
+    }
+
+    /*****/
+    .skill,
+    .lang {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .skill p {
+      font-weight: 700;
+    }
+
+    .level {
+      margin-top: -9px;
+    }
+
+    .level svg {
+      max-width: 0.9em;
+      max-height: 0.9em;
+      border-radius: 1em;
+    }
+
+    /**********/
+    .scontent {
+      margin-bottom: 1.75em;
+    }
+
+    @media print {
+      @page {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      body {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+      main {
+        padding: 0;
+        margin: 0;
+        box-shadow: none;
+      }
+    }
+
+    @media screen and (max-width: 860px) {
+      main {
+        padding: 30px;
+        margin: 0;
+        box-shadow: none;
+      }
+
+      .content {
+        flex-wrap: wrap;
+      }
+
+      .line {
+        display: none;
+      }
+
+      .lside {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="name">
+      <h1>
+        <%= data.name %>
+      </h1>
+      <h2 class="jobtitle">
+        <%= data.jobtitle %>
+      </h2>
+    </div>
+    <div class="content">
+      <div class="lside">
+        <div class="section">
+          <h2>Contacts</h2>
+          <div class="contactItem">
+            <svg enable-background="new 0 0 100 100" id="Layer_5" version="1.1" viewBox="0 0 100 100"
+              xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <path
+                d="M50,5C25.147,5,5,25.147,5,50c0,24.853,20.147,45,45,45s45-20.147,45-45C95,25.147,74.853,5,50,5z   M49.464,24.312c0.145-0.619,0.708-0.896,0.807-0.945c0.259-0.128,0.49-0.147,0.954-0.187c0,0,0.399-0.026,0.749-0.016  c11.898,0.319,22.174,8.766,23.654,21.562c0.099,0.855,0.268,1.866,0.317,3.948c0.01,0.417,0.017,1.174-0.495,1.662  c-0.231,0.22-0.496,0.318-0.681,0.366c-0.257-0.057-0.662-0.187-0.973-0.528c-0.421-0.462-0.444-1.063-0.455-1.269  c-0.125-2.323-0.454-4.644-0.988-6.909c-1.978-8.397-9.601-15.024-18.188-15.984c-0.998-0.112-1.999-0.222-3.002-0.268  c-0.68-0.031-1.356-0.157-1.622-0.613C49.348,24.796,49.443,24.403,49.464,24.312z M54.137,32.219  c-0.022-0.004-0.501-0.007-1.107-0.166c-0.477-0.125-0.849-0.228-1.132-0.555c-0.268-0.31-0.341-0.69-0.352-0.974  c0.061-0.219,0.19-0.548,0.487-0.788c0.419-0.339,0.948-0.319,1.197-0.307c7.013,0.35,11.166,4.411,11.166,4.411  c0.36,0.352,1.867,1.858,3.178,4.301c1.581,2.946,2.037,5.689,2.184,7.369c0.036,0.383,0.026,0.951-0.238,1.535  c-0.109,0.24-0.232,0.505-0.521,0.714c-0.351,0.254-0.731,0.273-0.894,0.271c-0.181-0.068-0.407-0.184-0.606-0.39  c-0.257-0.266-0.375-0.556-0.388-0.676c-0.37-3.219-0.874-6.363-2.854-9.082C61.743,34.432,58.183,32.903,54.137,32.219z   M63.308,44.451c-0.068,0.933-0.447,1.277-0.542,1.358c-0.283,0.239-0.61,0.305-0.808,0.327c-0.229-0.045-0.554-0.147-0.818-0.408  c-0.391-0.387-0.441-0.919-0.461-1.093c-0.093-0.807-0.672-3.389-1.993-4.58c-0.826-0.745-1.967-1.138-3.636-1.38  c-0.67-0.097-1.32-0.233-1.555-0.677c-0.179-0.339-0.057-0.722-0.02-0.843c0.274-0.884,1.346-1.139,1.431-1.157  c0.712,0.1,5.263,0.801,7.344,4.185C63.376,42.014,63.346,43.93,63.308,44.451z M75.841,69.517  c-1.707,2.079-3.356,4.268-5.378,6.008c-1.736,1.493-4.006,1.673-6.265,0.75c-18.559-7.577-31.87-20.459-39.547-39.051  c-0.193-0.466-0.349-0.948-0.513-1.425c-1.437-4.173-1.004-5.794,2.42-8.601c1.119-0.918,2.317-1.749,3.532-2.538  c2.042-1.326,4.288-1.31,5.832,0.55c2.566,3.093,5.014,6.329,7.12,9.746c1.572,2.551,1.01,3.995-1.297,5.916  c-0.533,0.444-1.105,0.842-1.639,1.285c-1.335,1.109-1.899,2.431-1.31,4.185c2.581,7.69,7.967,12.552,15.475,15.135  c0.873,0.3,2.237-0.374,3.192-0.916c0.713-0.405,1.131-1.327,1.683-2.017c1.491-1.865,3.903-2.654,5.894-1.391  c3.559,2.258,6.969,4.766,10.314,7.335c0.717,0.551,0.891,1.808,1.278,2.657C76.319,68.136,76.276,68.987,75.841,69.517z"
+                fill="#7D51A0" />
+            </svg>
+            <div>
+              <p><strong>Phone</strong></p>
+              <p>
+                <%= data.phone %>
+              </p>
+            </div>
+          </div>
+          <div class="contactItem">
+            <svg id="Layer_1" style="enable-background: new 0 0 128 128" version="1.1" viewBox="0 0 128 128"
+              xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <g>
+                <circle style="fill: #267cb5" cx="64" cy="64" r="64" />
+              </g>
+              <g>
+                <g>
+                  <path style="fill: #ffffff" d="M64,28" />
+                </g>
+              </g>
+              <g>
+                <g>
+                  <path style="fill: #ffffff"
+                    d="M64,72.4l38.2-32.7c-0.6-0.4-1.4-0.7-2.2-0.7H28c-0.8,0-1.6,0.3-2.2,0.7L64,72.4z" />
+                </g>
+                <g>
+                  <path style="fill: #ffffff"
+                    d="M66.6,75.4c-1.5,1.3-3.7,1.3-5.2,0L24,43.5V85c0,2.2,1.8,4,4,4h72c2.2,0,4-1.8,4-4V43.4L66.6,75.4z" />
+                </g>
+              </g>
+            </svg>
+            <div>
+              <p><strong>Email</strong></p>
+              <p>
+                <%= data.email %>
+              </p>
+            </div>
+          </div>
+          <div class="contactItem">
+            <svg id="Layer_1" style="enable-background: new 0 0 128 128" version="1.1" viewBox="0 0 128 128"
+              xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <g>
+                <circle style="fill: #c93636" cx="64" cy="64" r="64" />
+              </g>
+              <g>
+                <g>
+                  <path style="fill: #ffffff" d="M64,28" />
+                </g>
+              </g>
+              <g>
+                <path style="fill: #ffffff" d="M64,38c-8.8,0-16,7.2-16,16s7.2,16,16,16s16-7.2,16-16S72.8,38,64,38z" />
+                <path style="fill: #ffffff"
+                  d="M64,24c-16.6,0-30,13.4-30,30c0,15,24.6,43.8,29.3,49.1c0.4,0.5,1.1,0.5,1.5,0C69.4,97.8,94,69,94,54   C94,37.4,80.6,24,64,24z M64,74c-11,0-20-9-20-20s9-20,20-20s20,9,20,20S75,74,64,74z" />
+              </g>
+            </svg>
+            <div>
+              <p><strong>Address</strong></p>
+              <p>
+                <%= data.address %>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Skills</h2>
+          <% data.skills.forEach((item)=> { %>
+            <div class="skill">
+              <p>
+                <%= item.name %>
+              </p>
+              <div class="level">
+                <% for(let i=0; i< item.level; i++) { %>
+                  <!-- green -->
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" height="60px" version="1.1" viewBox="0 0 60 60"
+                    width="60px">
+                    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
+                      <g transform="translate(-873.000000, -438.000000)">
+                        <g transform="translate(173.000000, 138.000000)" />
+                        <g fill="#57BA63" transform="translate(173.000000, 138.000000)">
+                          <path
+                            d="M702.995937,300 L757.004063,300 C758.658673,300 760,301.33731 760,302.995937 L760,357.004063 C760,358.658673 758.66269,360 757.004063,360 L702.995937,360 C701.341327,360 700,358.66269 700,357.004063 L700,302.995937 C700,301.341327 701.33731,300 702.995937,300 Z" />
+                        </g>
+                      </g>
+                    </g>
+                  </svg>
+                  <!-- /green -->
+                  <% } %>
+                    <% for(let i=0; i<(5 - item.level); i++) { %>
+                      <!-- gray -->
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" height="60px" version="1.1" viewBox="0 0 60 60"
+                        width="60px">
+                        <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
+                          <g transform="translate(-373.000000, -438.000000)">
+                            <g fill="#7F8C8D" transform="translate(173.000000, 138.000000)">
+                              <path
+                                d="M202.995937,300 L257.004063,300 C258.658673,300 260,301.33731 260,302.995937 L260,357.004063 C260,358.658673 258.66269,360 257.004063,360 L202.995937,360 C201.341327,360 200,358.66269 200,357.004063 L200,302.995937 C200,301.341327 201.33731,300 202.995937,300 Z"
+                                id="square-33" />
+                            </g>
+                          </g>
+                        </g>
+                      </svg>
+                      <!-- /gray -->
+                      <% } %>
+              </div>
+            </div>
+            <% }) %>
+        </div>
+        <div class="section">
+          <h2>Languages</h2>
+          <% data.languages.forEach((item)=> { %>
+            <div class="lang">
+              <p>
+                <%= item.name %>
+              </p>
+              <p>
+                <%= item.level %>
+              </p>
+            </div>
+            <% }) %>
+        </div>
+      </div>
+
+      <div class="line"></div>
+
+      <div class="rside">
+        <div class="section">
+          <h2>About Me</h2>
+          <p>
+            <%= data.aboutme %>
+          </p>
+        </div>
+        <div class="section">
+          <h2>Education</h2>
+          <% data.education.forEach((item)=> { %>
+            <div class="scontent">
+              <p><strong>
+                  <%= item.school %>
+                </strong></p>
+              <p>
+                <%= item.major %>
+              </p>
+              <span>
+                <%= item.gpa %>
+              </span>
+              <span>-</span>
+              <span>
+                <%= item.year %>
+              </span>
+            </div>
+            <% }) %>
+        </div>
+        <div class="section">
+          <h2>Experience</h2>
+          <% data.experience.forEach((item)=> { %>
+            <div class="scontent">
+              <p><strong>
+                  <%= item.place %>
+                </strong></p>
+              <span>
+                <%= item.position %>
+              </span>
+              <span>
+                <%= item.year %>
+              </span>
+              <p>
+                <%= item.description %>
+              </p>
+            </div>
+            <% }) %>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
